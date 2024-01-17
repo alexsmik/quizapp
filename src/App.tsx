@@ -14,14 +14,12 @@ interface Question {
   answers: string[];
 }
 interface Config {
-  // number?: number;
   score: number;
   amount: number;
   category: string;
   level: string;
 }
 const defaultConfig: Config = {
-  // number: 3,
   amount: 3,
   score: 0,
   category: 'Select Category',
@@ -58,10 +56,10 @@ const App = () => {
             ...question,
             answers: shuffleArray(answers),
           };
-        }); // end shuffled
+        });
         console.log('Shuffled Questions ->', shuffled);
         setQuestion(shuffled);
-      }) // end fetch
+      })
       .catch((error) => console.error(error));
   };
   const shuffleArray = (arr: string[]) => {
